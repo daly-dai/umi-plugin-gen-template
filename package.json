@@ -1,0 +1,33 @@
+{
+  "name": "umi-plugin-gen-template",
+  "author": "dsh <18094277434@163.com>",
+  "version": "0.0.1",
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "scripts": {
+    "dev": "father dev",
+    "build": "father build"
+  },
+  "keywords": [],
+  "authors": {
+    "name": "dsh <18094277434@163.com>",
+    "email": "18094277434@163.com"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^20.3.3",
+    "@types/prompts": "^2.4.4",
+    "father": "^4.2.3",
+    "typescript": "^5.1.6",
+    "umi": "^4.0.72"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "kleur": "^4.1.5",
+    "prompts": "^2.4.2"
+  }
+}
