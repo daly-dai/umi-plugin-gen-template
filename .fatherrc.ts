@@ -1,5 +1,5 @@
 import { defineConfig } from 'father';
 
 export default defineConfig({
-  cjs: {},
+  cjs: { ignores: ["./src/public/**/*.ts"] }
 });

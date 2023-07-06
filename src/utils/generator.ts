@@ -106,8 +106,22 @@ export async function generatorTemplate(
   try {
     // 使用fs-extra中的copy函数复制目录
     await fs.copy(templatePath, folderPath);
-    console.log('Directory copied successfully!');
   } catch (err) {
     console.error(err);
   }
+}
+
+
+/**
+ * 去除指定文件下tpl的后缀名称
+ * @param folderPath 
+ */
+export async function removeTplFileName(folderPath: string) {
+  const files = fs.readdirSync(folderPath);
+
+  files.forEach((file, index) => {
+    const fileName = file.replace(/.tpl/g, '');
+
+    fs.rename(`${folderPath}/${files[index]}`, `${folderPath}/${fileName}`)
+  })
 }
