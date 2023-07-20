@@ -1,23 +1,27 @@
 import { templateType } from '../types';
-import { getPagesUrl, getProjectPath } from '../utils/common';
+import { getPagesUrl, getProjectPath, printMsg } from '../utils/common';
 import {
   generatorTemplate,
   getTemplatePath,
   isFileExit,
+  removeTplFileName,
   selectPrecisionTemplate,
   selectTemplate,
 } from '../utils/generator';
 
 export default async function createTemplate(pageName: string) {
-  console.log('start generator');
+
   isFileExit(pageName);
 
   const { template } = (await selectTemplate()) as { template: templateType };
-  console.log(template, 'template');
 
   const { precisionTemplate } = await selectPrecisionTemplate(template);
 
   const templatePath = getTemplatePath(template, precisionTemplate);
 
-  generatorTemplate(templatePath, getProjectPath(pageName, getPagesUrl()));
+  await generatorTemplate(templatePath, getProjectPath(pageName, getPagesUrl()));
+
+  removeTplFileName(getProjectPath(pageName, getPagesUrl()));
+
+  printMsg("模板生成成功")
 }

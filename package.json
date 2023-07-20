@@ -1,17 +1,20 @@
 {
   "name": "umi-plugin-gen-template",
-  "author": "dsh <18094277434@163.com>",
-  "version": "0.0.1",
+  "author": "dsh ",
+  "version": "1.1.0",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
   "scripts": {
     "dev": "father dev",
     "build": "father build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:daly-dai/umi-plugin-gen-template.git"
+  },
   "keywords": [],
   "authors": {
-    "name": "dsh <18094277434@163.com>",
-    "email": "18094277434@163.com"
+    "name": "dsh"
   },
   "license": "MIT",
   "files": [
